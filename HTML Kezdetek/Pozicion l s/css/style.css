@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+body {
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+	background:url('../pics/bg-body.jpg') no-repeat;
+	background-size: cover;
+}
+* {
+	box-sizing: border-box
+}
+
+
+
+.wrapper {
+	max-width:800px;
+	margin: 0 auto;
+	box-shadow:0 0 100px rgba(255,255,255,.4);
+}
+
+header {
+	background: url('../pics/bg-header.jpg');
+	height:360px;
+	position:relative;
+}
+nav {
+	position:absolute;
+	left:0;
+	right:0;
+	bottom:0;
+	background: rgba(190,0,0,.7);
+}
+main {
+	background:white;
+	padding:40px;
+}
+main p{
+	line-height:1.5;
+}
+nav::after{
+	content:'';
+	clear:both;
+	display: table;
+}
+nav ul{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+nav>ul>li{
+	float:left;
+}
+nav ul li a{
+	color:white;
+	padding:20px;
+	text-decoration:none;
+	display:block;
+}
+nav ul li a:hover{
+	background:rgba(0,0,0,.8);
+}
+nav .has-submenu{
+	position:relative;
+}
+nav .has-submenu:hover .submenu{
+	display:block;
+}
+nav .submenu{
+	position:absolute;
+	width:220px;
+	display:none;
+}
+nav .submenu a{
+	background:(190,0,0,.1);
+}
+.cookie-accept{
+	background:rgba(0,0,0,.9);
+	color:white;
+	padding:30px;
+	position:fixed;
+	left:0;
+	right:0;
+	bottom:0;
+	text-align:center;
+}
+.cookie-accept button{
+	background:yellow;
+	color:black;
+	margin-left:10px;
+	padding:5px 10px;
+	border-radius:5px;
+	border:0;
+	cursor:pointer;
+}
+.cookie-accept button:hover{
+	background: red;
+	color:white;
+}
+nav .has-submenu::after{
+	content:'↓';
+	color:white;
+	position:absolute;
+	right:5px;
+	top:17px;
+}
+
+nav .has-submenu>a{
+	padding-right:35px;
+}

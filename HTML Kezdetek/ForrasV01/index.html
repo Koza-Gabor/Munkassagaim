@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="hu-HU">
+<head>
+	<title>A hálózati címfordítás</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+	<link rel="icon" type="image/png" size="16×16" href="img/ipv4fogyas.png">
+	<style>
+	table,th,td {
+		border: 1px solid black;
+		border-collapse: collapse;
+	}
+	th, td {
+		padding: 15px;
+		text-align:center;
+	}
+	</style>
+</head>
+<body>
+  <div id="content">
+    <h1>A hálózati címfordítás<a href="https://hu.wikipedia.org/wiki/Hálózati_címfordítás">*</a></h1>
+	<table border="1">
+	<table style="width:25%">
+	<table class="jobbra">
+	<thead>
+	<tr>
+	<th colspan=2><img class="jobbra" align="right" src="./kepek/ipv4fogyas.png" style="width:350px;height:300px;">
+	<p>A hálózati címfordítás (angolul<b>Network Address Translation</b>, röviden <b>NAT</b>) a csomagszûrõ tûzfalak, illetve a címfordításra képes hálózati eszközök (pl. router) kiegészítõ szolgáltatása, mely lehetõvé teszi a belsõ hálózatra kötött gépek közvetlen kommunikációját tetszõleges protokollokon keresztül külsõ gépekkel anélkül, hogy azoknak saját nyilvános IP-címmel kellene rendelkezniük. Címfordításra akár egyetlen számítógép is képes, így valósítható meg például az internet-kapcsolat megosztás is, amikor a megosztó gép a saját publikus címébe fordítja bele a megosztást kihasználó kliens gép forgalmát.</p>
+	<P>Az egész címfordítás témaköre abból az igénybõl nõtte ki magát, hogy az IPv4 tartománya viszonylag kevés, 2<sup>32</sup>=256<sup>4</sup>, azaz 4 294 967 296 db egyedi IP címet tesz ki. Ebben persze benne van az összes broadcast cím és a külsõ hálózatra nem route-olható belsõ címtartományok is, tehát az interneten globálisan használható címek összessége így még kevesebb. A gépek hálózati kártyái egynél több címet is felvehetnek egyszerre ha kell, illetve nemcsak a számítógépeknek, hanem szinte az összes fontosabb hálózati eszköznek is szüksége van legalább egy címre. Belátható, hogy így a soknak tûnõ 4 milliárd cím világviszonylatban már sajnos kevés.</p>
+	</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+	<td>Az IPv4 címek fogyása</td>
+	</tr>
+	</tbody>
+	</table>
+    <h2>Mûködése</h2>
+
+    <p>A hálózati címfordító a belsõ gépekrõl érkezõ csomagokat az internetre továbbítás elõtt úgy módosítja, hogy azok feladójaként saját magát tünteti fel, így az azokra érkezõ válaszcsomagok is hozzá kerülnek majd továbbításra, amiket – a célállomás címének módosítása után – a belsõ hálózaton elhelyezkedõ eredeti feladó részére ad át. Ebbõl kifolyólag ez minden esetben egy aktív hálózati eszközt igényel, amely folyamatosan figyeli az érkezõ csomagokat és azok feladói és címzettjei alapján elvégzi a szükséges módosításokat. Ez többnyire egy tûzfal, amely megfelelõen szétválasztja a külsõ internetet a belsõ hálózattól. Innen származik a terminológia is: a külsõ, illetve belsõ hálózat fogalma. A belsõ hálózatnak olyan címtartományt kell adni, amelyet minden hálózati eszköz a nemzetközi szabványoknak megfelelõen belsõnek ismer el, és így azokat nem irányítja közvetlenül a külsõ hálózat felé. A belsõ címeket az alábbi táblázat mutatja be:
+    </p>
+	<table>
+	<thead>
+	<tr>
+	<th>RFC 1918</th>
+	<th>IP címtartomány</th>
+	<th>egyedi címek száma</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+	<th>24-bit block</th>
+	<th>10.0.0.0 – 10.255.255.255</th>
+	<th>16 777 216</th>
+	</tr>
+	</tbody>
+	<tbody>
+	<tr>
+	<th>20-bit block</th>
+	<th>172.16.0.0 – 172.31.255.255</th>
+	<th>1 048 576</th>
+	</tr>
+	</tbody>
+	<tfoot>
+	<tr>
+	<th>16-bit block</th>
+	<th>192.168.0.0 – 192.168.255.255</th>
+	<th>65 536</th>
+	</tr>
+	</tfoot>
+	</table>
+	<p>A címfordítás segítségével megoldható, hogy akár egy egész cég teljes belsõ hálózati forgalma egyetlen külsõ IP cím mögött legyen, azaz gyakorlatilag egyetlen külsõ címet használ el egy több száz gépes hálózat. A belsõ forgalomban természetesen szükség van az egyedi belsõ címekre, de errõl csak a címfordítást végzõ hálózati eszközöknek kell tudnia, kifelé ennek részletei már nem látható információk. Így létrejöhet olyan gazdaságos konfiguráció is, hogy egy viszonylag nagy cég teljes külsõ címfoglalása 10-20 db cím, míg a belsõ forgalmukban akár több ezer belsõ cím is lehet. Nagy elõnye ennek a technikának, hogy ugyanazt a belsõ tartományt nyugodtan használhatja bárki más is, amíg mindegyik egyedi külsõ cím mögé van fordítva, ez nem okoz zavart. Akár az összes NAT-ot használó cég belsõ hálózatában lehet minden gép a 10.0.0.0 tartományban, ha kifelé valóban egyedi címmel látszanak. Éppen a címfordítás technológiája miatt nem került gyorsabban bevezetésre az IPv6 szabvány, amely kifejlesztésének egyik oka az IPv4 fogyatkozó címtartományának kiváltása volt.
+	</p>
+  </div>
+</body>
+</html>

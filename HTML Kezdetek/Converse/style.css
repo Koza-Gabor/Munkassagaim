@@ -1,0 +1,41 @@
+*{
+box-sizing: border-box;}
+
+body{
+	background:url('kepek/hatter2.jpg');
+	background-size:cover;
+}
+#content{
+	max-width:800px;
+	margin: 10px auto 0 auto;
+	padding:20px;
+	background:#f2f1f8;
+	font-family:Verdana, "sans-serif";
+}
+h1{
+	text-transform:uppercase;
+	text-align:center;
+	padding: 20px 0;
+	letter-spacing:7px;
+}
+img{
+	height:250px;
+	border:1px solid black;
+	padding:2px;
+}
+.left{
+	float:left;
+	margin:0 10px 5px 0;
+}
+.right{
+	float:right;
+	margin:0 0 0 10px;
+}
+h5{
+	font-weight:bold;
+	border-bottom:1px solid black;
+	padding-bottom: 10px;
+}
+p{
+	text-align:justify;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("#gomb1").click(function(){
+            $(".ele").prepend("<b>„Én imádom a Külker Technikumot!”-t</b>")
+    });
+    $(".gomb2").click(function(){
+        $(".moge").prop("initial");
+            $(".moge").append("„Én imádom a Külker Technikumot!”-t")
+    });
+});
+    </script>
+</head>
+<body>
+    <p class="ele"></p>
+    <img src="https://tudomanyplaza.hu/wp-content/uploads/2018/11/macska.jpg" alt="">
+    <p class="moge"></p>
+    <button id="gomb1">Elé</button>
+    <button class="gomb2">Mögé</button>
+</body>
+</body>
+</html>

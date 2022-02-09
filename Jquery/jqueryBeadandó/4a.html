@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            $("#gomb1").click(function(){
+                $("p").hide(1000);
+            });
+            
+            $("#gomb2").click(function(){
+                $("p").show(2000);
+            });
+            
+            $("#gomb3").click(function(){
+                $("p").toggle(500);
+            });
+        });
+    </script>
+</head>
+<body>
+    <p id="bekezdes">Ez egy bekezdés!</p>
+    <p>Ez egy másik bekezdés!</p>
+    <button id="gomb1">Elrejt</button>
+    <button id="gomb2">Megjelenít</button>
+    <button id="gomb3">Váltás</button>
+</body>
+</html>

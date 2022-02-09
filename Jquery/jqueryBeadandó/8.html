@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            
+            $("#gomb").click(function(){
+                $("#bekezdes1,#bekezdes2,#bekezdes3").show();
+            });
+        });
+    </script>
+</head>
+<body>
+    <p id="bekezdes">Ez egy bekezdés!</p>
+    <p id="bekezdes1" style="display: none;">Ez egy bekezdés 1!</p>
+    <p id="bekezdes2" style="display: none;">Ez egy bekezdés 2!</p>
+    <p id="bekezdes3" style="display: none;">Ez egy bekezdés 3!</p>
+    <button id="gomb">Megjelenít</button>
+</body>
+</html>
